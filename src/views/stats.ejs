@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Totaux par catégorie</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <%- include('partials/nav', { activePage: 'stats' }) %>
+  <main>
+    <h1>Totaux — <%= new Intl.DateTimeFormat('fr-FR', { month: 'long', year: 'numeric' }).format(new Date(month + '-01')) %></h1>
+
+    <form method="get" action="/stats">
+      <label for="month">Mois :</label>
+      <input type="month" id="month" name="month" value="<%= month %>">
+      <button type="submit">Afficher</button>
+    </form>
+
+    <% if (rows.length === 0) { %>
+      <p class="empty">Aucune dépense pour ce mois.</p>
+    <% } else { %>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Catégorie</th>
+            <th scope="col">Total (€)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% rows.forEach(r => { %>
+            <tr>
+              <td><%= r.category %></td>
+              <td class="amount"><%= r.total.toFixed(2) %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Total général</th>
+            <td class="amount"><strong><%= grandTotal.toFixed(2) %></strong></td>
+          </tr>
+        </tfoot>
+      </table>
+    <% } %>
+
+  </main>
+</body>
+</html>

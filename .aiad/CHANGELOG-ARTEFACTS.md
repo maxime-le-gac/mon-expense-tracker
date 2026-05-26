@@ -1,5 +1,33 @@
 # CHANGELOG-ARTEFACTS — mon-expense-tracker
 
+## 2026-05-26 — Drift Lock SPEC-004
+
+- SPEC-004-navigation-onglets : statut `in-progress` → `done`
+- INTENT-004-navigation-onglets : statut `draft` → `done` (toutes SPECs liées complétées)
+- specs/_index.md : SQS 5/5, statut SPEC-004 mis à jour
+- intents/_index.md : statut INTENT-004 mis à jour
+- ARCHITECTURE.md : structure projet mise à jour (stats.ejs + partials/nav.ejs)
+- AGENT-GUIDE.md : état courant mis à jour (SPEC-004 done, navigation onglets listée)
+- Fichiers créés : src/views/partials/nav.ejs
+- Fichiers modifiés : src/views/index.ejs, src/views/add.ejs, src/views/stats.ejs, public/style.css
+- Drift corrigé avant lock : ARCHITECTURE.md manquait stats.ejs et partials/nav.ejs dans la structure projet
+- Gouvernance RGAA : `<nav aria-label>`, liens texte descriptifs, navigable au clavier — conforme
+- Gouvernance RGESN : zéro dépendance JS, CSS minimaliste (+31 lignes) — conforme
+
+## 2026-05-26 — Drift Lock SPEC-003
+
+- SPEC-003-totaux-par-categorie : statut `in-progress` → `done`
+- INTENT-003-totaux-par-categorie : statut `draft` → `done` (toutes SPECs liées complétées)
+- specs/_index.md : SQS 5/5, statut SPEC-003 mis à jour
+- intents/_index.md : statut INTENT-003 mis à jour
+- ARCHITECTURE.md : routes `GET /stats` et `GET /stats?month=YYYY-MM` ajoutées
+- AGENT-GUIDE.md : Lessons Learned + état courant mis à jour
+- Fichiers créés : src/views/stats.ejs, .aiad/intents/INTENT-003-totaux-par-categorie.md, .aiad/specs/SPEC-003-totaux-par-categorie.md
+- Fichiers modifiés : src/models/expense.js (getTotalsByCategory), src/routes/expenses.js (GET /stats + isValidMonth)
+- Drift corrigé avant lock : SQL `date LIKE ?` → `strftime('%Y-%m', date) = ?` (convention AGENT-GUIDE) ; validation `month` étendue à la plage 01-12
+- Gouvernance RGAA : `<th scope="col/row">`, `<label for="month">`, lang="fr" — conforme
+- Gouvernance RGESN : zéro dépendance JS ajoutée, rendu server-side uniquement — conforme
+
 ## 2026-05-26 — Drift Lock SPEC-002
 
 - SPEC-002-saisie-et-liste-depenses : statut `in-progress` → `done`

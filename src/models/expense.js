@@ -29,4 +29,10 @@ function add({ amount, category, date, description }) {
   return { id: result.lastInsertRowid };
 }
 
-module.exports = { getAll, add };
+function getTotalsByCategory(month) {
+  return db.prepare(
+    "SELECT category, SUM(amount) AS total FROM expenses WHERE strftime('%Y-%m', date) = ? GROUP BY category ORDER BY total DESC"
+  ).all(month);
+}
+
+module.exports = { getAll, add, getTotalsByCategory };

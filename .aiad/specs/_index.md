@@ -4,3 +4,5 @@
 |----|-------|-----------|-----|------|--------|
 | SPEC-001 | hello-world | INTENT-001 | 5/5 | 2026-05-21 | done |
 | SPEC-002 | saisie-et-liste-depenses | INTENT-002 | 5/5 | 2026-05-26 | done |
+| SPEC-003 | totaux-par-categorie | INTENT-003 | 5/5 | 2026-05-26 | done |
+| SPEC-004 | navigation-onglets | INTENT-004 | 5/5 | 2026-05-26 | done |

@@ -109,3 +109,32 @@ input:focus {
   outline-offset: 1px;
   border-color: #0066cc;
 }
+
+.nav {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  gap: 2px;
+  padding-top: 1rem;
+}
+
+.nav a {
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  color: #555;
+  background: #e8e8e8;
+  border-radius: 6px 6px 0 0;
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  background: #d4d4d4;
+  color: #333;
+}
+
+.nav a.active {
+  background: #fff;
+  color: #0066cc;
+  font-weight: 600;
+  box-shadow: 0 -2px 0 #0066cc inset;
+}

@@ -23,8 +23,11 @@ mon-expense-tracker/
 │   ├── models/
 │   │   └── expense.js      ← Modèle SQLite
 │   └── views/
-│       ├── index.ejs       ← Liste mensuelle + totaux
-│       └── add.ejs         ← Formulaire ajout
+│       ├── index.ejs           ← Liste mensuelle
+│       ├── add.ejs             ← Formulaire ajout
+│       ├── stats.ejs           ← Totaux par catégorie
+│       └── partials/
+│           └── nav.ejs         ← Barre de navigation commune
 ├── public/
 │   └── style.css
 ├── data/
@@ -53,6 +56,8 @@ CREATE TABLE expenses (
 | GET | `/?month=YYYY-MM` | Liste filtrée par mois |
 | GET | `/add` | Formulaire d'ajout |
 | POST | `/add` | Enregistrer une dépense |
+| GET | `/stats` | Totaux par catégorie (mois courant) |
+| GET | `/stats?month=YYYY-MM` | Totaux par catégorie filtrés par mois |
 | POST | `/delete/:id` | Supprimer une dépense |
 
 ## Décisions architecturales

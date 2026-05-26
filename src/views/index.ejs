@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+  <%- include('partials/nav', { activePage: 'list' }) %>
   <main>
     <h1>Mes dépenses</h1>
-    <a href="/add" class="btn">+ Ajouter une dépense</a>
 
     <% if (expenses.length === 0) { %>
       <p class="empty">Aucune dépense enregistrée.</p>

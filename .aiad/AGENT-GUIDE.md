@@ -64,7 +64,7 @@ const totals = db.prepare(
 
 ## Lessons Learned
 
-*(vide au démarrage)*
+- **2026-05-26 — SPEC-003** : Dans `better-sqlite3`, les guillemets doubles `"..."` sont interprétés par SQLite comme des identifiants de colonne. Les formats `strftime` doivent être en guillemets simples : `strftime('%Y-%m', date)`, pas `strftime("%Y-%m", date)`. Toujours utiliser des templates JS (template literals ou concaténation) pour construire les requêtes avec la chaîne de format en simples quotes à l'intérieur.
 
 ## Human Learnings
 
@@ -74,6 +74,6 @@ const totals = db.prepare(
 
 - Phase : MVP en cours
 - SPECs actives : aucune
-- SPECs complétées : SPEC-001 Hello World (2026-05-21), SPEC-002 Saisie et liste dépenses (2026-05-26)
-- Fonctionnel disponible : ajout dépense (POST /add) + liste complète (GET /) — sans filtrage mensuel ni totaux
-- Prochaine étape : `/sdd-intent` pour filtrage mensuel, totaux par catégorie ou suppression de dépense
+- SPECs complétées : SPEC-001 Hello World (2026-05-21), SPEC-002 Saisie et liste dépenses (2026-05-26), SPEC-003 Totaux par catégorie (2026-05-26), SPEC-004 Navigation onglets (2026-05-26)
+- Fonctionnel disponible : ajout dépense (POST /add) + liste complète (GET /) + totaux par catégorie (GET /stats) + navigation par onglets (partials/nav.ejs)
+- Prochaine étape : filtrage mensuel sur la liste, suppression de dépense ou export CSV
