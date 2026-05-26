@@ -68,11 +68,12 @@ const totals = db.prepare(
 
 ## Human Learnings
 
-*(vide au démarrage)*
+- **2026-05-26 — SPEC-002** : Quand une SPEC liste une valeur dans les cas limites (ex. `2026-13-01`), s'assurer que la méthode de validation spécifiée (ici : regex format) est cohérente avec le cas. Si la valeur calendrière doit être validée, préciser explicitement « valider avec `new Date()` ou un parser ISO » plutôt que regex seule.
 
 ## État courant
 
 - Phase : MVP en cours
-- SPECs actives : aucune (SPEC-001 done)
-- SPECs complétées : SPEC-001 Hello World (validée 2026-05-21)
-- Prochaine étape : `/sdd-intent` pour capturer l'intention MVP (CRUD dépenses)
+- SPECs actives : aucune
+- SPECs complétées : SPEC-001 Hello World (2026-05-21), SPEC-002 Saisie et liste dépenses (2026-05-26)
+- Fonctionnel disponible : ajout dépense (POST /add) + liste complète (GET /) — sans filtrage mensuel ni totaux
+- Prochaine étape : `/sdd-intent` pour filtrage mensuel, totaux par catégorie ou suppression de dépense
