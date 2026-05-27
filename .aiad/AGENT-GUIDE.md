@@ -74,6 +74,7 @@ const totals = db.prepare(
 
 - Phase : MVP en cours
 - SPECs actives : aucune
-- SPECs complétées : SPEC-001 Hello World (2026-05-21), SPEC-002 Saisie et liste dépenses (2026-05-26), SPEC-003 Totaux par catégorie (2026-05-26), SPEC-004 Navigation onglets (2026-05-26)
+- SPECs complétées : SPEC-001 Hello World (2026-05-21), SPEC-002 Saisie et liste dépenses (2026-05-26), SPEC-003 Totaux par catégorie (2026-05-26), SPEC-004 Navigation onglets (2026-05-26), SPEC-005 Tests unitaires (2026-05-27)
 - Fonctionnel disponible : ajout dépense (POST /add) + liste complète (GET /) + totaux par catégorie (GET /stats) + navigation par onglets (partials/nav.ejs)
+- Tests : Jest + supertest, 17 tests, couverture 100 % lignes sur models + routes (`npm test`)
 - Prochaine étape : filtrage mensuel sur la liste, suppression de dépense ou export CSV

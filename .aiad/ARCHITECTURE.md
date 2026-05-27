@@ -32,6 +32,11 @@ mon-expense-tracker/
 │   └── style.css
 ├── data/
 │   └── expenses.db         ← Fichier SQLite (gitignored)
+├── tests/
+│   ├── models/
+│   │   └── expense.test.js     ← Tests unitaires modèle (Jest + DB :memory:)
+│   └── routes/
+│       └── expenses.test.js    ← Tests routes (Jest + supertest + mock modèle)
 ├── package.json
 └── .aiad/
 ```

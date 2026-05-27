@@ -1,5 +1,21 @@
 # CHANGELOG-ARTEFACTS — mon-expense-tracker
 
+## 2026-05-27 — Drift Lock SPEC-005
+
+- SPEC-005-tests-unitaires : statut `in-progress` → `done`
+- INTENT-005-tests-unitaires : statut `draft` → `done` (toutes SPECs liées complétées)
+- specs/_index.md : SQS 4/5, statut SPEC-005 mis à jour
+- intents/_index.md : statut INTENT-005 mis à jour
+- AGENT-GUIDE.md : état courant mis à jour (SPEC-005 done, `npm test` listé)
+- ARCHITECTURE.md : répertoire `tests/` ajouté dans la structure projet
+- .gitignore : `coverage/` ajouté (répertoire généré par Jest)
+- Fichiers créés : tests/models/expense.test.js, tests/routes/expenses.test.js, .aiad/intents/INTENT-005-tests-unitaires.md, .aiad/specs/SPEC-005-tests-unitaires.md
+- Fichiers modifiés : src/app.js (export + listen conditionnel), src/models/expense.js (TEST_DB_PATH), package.json (jest config + devDeps)
+- Drift corrigé avant lock : coverage/ absent du .gitignore ; tests/ absent de ARCHITECTURE.md
+- Écart SPEC vs implémentation (non-bloquant) : expense.js utilise une IIFE pour le chemin DB au lieu de l'inline proposé dans la SPEC — approche meilleure car lazy evaluation, alignée avec l'intent
+- Gouvernance RGESN : devDependencies uniquement (jest, supertest), aucun impact runtime — conforme
+- Résultats tests : 17/17 PASS, couverture 100 % lignes sur models + routes (cible 50 %)
+
 ## 2026-05-26 — Drift Lock SPEC-004
 
 - SPEC-004-navigation-onglets : statut `in-progress` → `done`

@@ -6,3 +6,4 @@
 | INTENT-002 | saisie-et-liste-depenses | 2026-05-26 | done |
 | INTENT-003 | totaux-par-categorie | 2026-05-26 | done |
 | INTENT-004 | navigation-onglets | 2026-05-26 | done |
+| INTENT-005 | tests-unitaires | 2026-05-27 | done |

@@ -4,11 +4,28 @@
   "description": "Tracker de dépenses personnelles minimaliste",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js"
+    "start": "node src/app.js",
+    "test": "jest --coverage"
   },
   "dependencies": {
     "better-sqlite3": "^12.10.0",
     "ejs": "^6.0.1",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.2.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/models/**/*.js",
+      "src/routes/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 50
+      }
+    }
   }
 }

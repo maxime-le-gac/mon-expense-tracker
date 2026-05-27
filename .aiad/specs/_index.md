@@ -6,3 +6,4 @@
 | SPEC-002 | saisie-et-liste-depenses | INTENT-002 | 5/5 | 2026-05-26 | done |
 | SPEC-003 | totaux-par-categorie | INTENT-003 | 5/5 | 2026-05-26 | done |
 | SPEC-004 | navigation-onglets | INTENT-004 | 5/5 | 2026-05-26 | done |
+| SPEC-005 | tests-unitaires | INTENT-005 | 4/5 | 2026-05-27 | done |
